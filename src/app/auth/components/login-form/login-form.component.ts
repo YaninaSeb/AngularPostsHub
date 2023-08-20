@@ -22,7 +22,7 @@ export class LoginFormComponent implements OnInit{
         });
     }
 
-    public toggleShowPassword() {
+    public toggleShowPassword(): void {
         this.showPassword = !this.showPassword;
     }
 

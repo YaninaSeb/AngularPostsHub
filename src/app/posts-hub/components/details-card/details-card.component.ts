@@ -9,7 +9,7 @@ import { HttpService } from '../../services/http.service';
     styleUrls: ['./details-card.component.css']
 })
 export class DetailsCardComponent implements OnInit {
-    public post!: PostModel | any;
+    public post!: PostModel;
 
     constructor(
         private readonly activateRoute: ActivatedRoute,
