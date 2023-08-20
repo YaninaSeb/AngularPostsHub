@@ -1,5 +1,5 @@
-<mat-card class="wrap-post">
-    <mat-card-content class="post-card">
-    
+<mat-card class="wrap-post" (click)="onShowDetails(post.id)">
+    <mat-card-content class="post-info">
+        {{ post.title }}
     </mat-card-content>
 </mat-card>

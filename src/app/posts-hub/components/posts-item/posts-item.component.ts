@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PostModel } from '../../models/post.model';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-posts-item',
@@ -8,4 +9,10 @@ import { PostModel } from '../../models/post.model';
 })
 export class PostsItemComponent {
     @Input() post!: PostModel;
+
+    constructor(private readonly router: Router) {}
+
+    public onShowDetails(id: number): void {
+        this.router.navigate(['/posts', id]);
+    }
 }
