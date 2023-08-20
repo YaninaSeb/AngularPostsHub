@@ -1,1 +1,9 @@
-<p>details-card works!</p>
+<mat-card *ngIf="post; else loading" class="wrap-post">
+    <mat-card-content class="post-info">
+        {{ post.title }}
+    </mat-card-content>
+</mat-card>
+
+<ng-template #loading>
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+</ng-template>

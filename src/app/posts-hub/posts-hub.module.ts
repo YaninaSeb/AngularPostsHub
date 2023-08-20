@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
 import { PostsTableComponent } from './components/posts-table/posts-table.component';
 import { PostsItemComponent } from './components/posts-item/posts-item.component';
 import { DetailsCardComponent } from './components/details-card/details-card.component';
-import { RouterModule, Routes } from '@angular/router';
 import { PostsComponent } from './pages/posts/posts.component';
 import { DetailsComponent } from './pages/details/details.component';
+
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const routes: Routes = [
     { path: '', component: PostsComponent, pathMatch: 'full' },
@@ -19,12 +22,14 @@ const routes: Routes = [
         DetailsComponent,
         PostsTableComponent,
         PostsItemComponent,
-        DetailsCardComponent
+        DetailsCardComponent,
+        
     ],
     imports: [
         RouterModule.forChild(routes),
         CommonModule,
         MatCardModule,
+        MatProgressSpinnerModule,
     ],
 })
 export class PostsHubModule { }

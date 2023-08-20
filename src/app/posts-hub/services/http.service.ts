@@ -16,7 +16,7 @@ export class HttpService {
         return this.http.get(this.BASE_URL);
     }
 
-    public getPostById(id: string) {
-        return this.http.get(`${this.BASE_URL}\${id}`);
+    public getPostById(id: number): Observable<any> {
+        return this.http.get(`${this.BASE_URL}/${id}`);
     }
 }
