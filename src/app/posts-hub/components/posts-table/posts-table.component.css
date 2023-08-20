@@ -1,0 +1,17 @@
+:host {
+    width: 100%;
+    height: 100%;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.wrap-posts {
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
