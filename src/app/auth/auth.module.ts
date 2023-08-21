@@ -49,7 +49,7 @@ const routes: Routes = [
         MatInputModule,
         MatButtonModule,
         MatIconModule,
-        MatTooltipModule,        
+        MatTooltipModule,
     ],
     exports: [RouterModule]
 })

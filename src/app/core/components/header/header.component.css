@@ -1,0 +1,16 @@
+.wrap-header {
+    height: 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-icon {
+    background: none;
+    border: none;
+}
+
+.header-icon:hover {
+    cursor: pointer;
+}

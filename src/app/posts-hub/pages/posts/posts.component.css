@@ -1,5 +1,5 @@
 :host {
-    height: 100%;
+    height: calc(100% - 65px);
     width: 100%;
     padding: 20px 0;
 
@@ -8,4 +8,6 @@
     justify-content: center;
 
     background: #f2f2f2;
+    
+    overflow: hidden;
 }
