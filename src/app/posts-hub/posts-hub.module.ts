@@ -10,6 +10,7 @@ import { DetailsComponent } from './pages/details/details.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
     { path: '', component: PostsComponent, pathMatch: 'full' },
@@ -28,8 +29,10 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes),
         CommonModule,
+        
         MatCardModule,
         MatProgressSpinnerModule,
+        MatIconModule,
     ],
 })
 export class PostsHubModule { }
