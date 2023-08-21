@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginFormModel } from '../../models/login-form.model';
 import { LoginDataModel } from '../../models/login-data.model';
 import { AuthService } from '../../services/auth.service';
+import { passwordValidator } from '../../utils/password.validator';
 
 @Component({
     selector: 'app-login-form',
@@ -18,8 +19,23 @@ export class LoginFormComponent implements OnInit{
     public ngOnInit(): void {
         this.form = this.fb.group<LoginFormModel>({
             email: this.fb.control<string | null>(null, [Validators.required, Validators.email]),
-            password: this.fb.control<string | null>(null, Validators.required)
+            password: this.fb.control<string | null>(
+                null, 
+                [
+                    Validators.required,
+                    Validators.minLength(6),
+                    passwordValidator()
+                ]
+            ),
         });
+    }
+
+    get email(): AbstractControl<string | null> | null {
+        return this.form.get('email');
+    }
+    
+    get password(): AbstractControl<string | null> | null {
+        return this.form.get('password');
     }
 
     public toggleShowPassword(): void {

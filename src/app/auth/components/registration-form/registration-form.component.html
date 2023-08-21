@@ -4,16 +4,22 @@
             <mat-form-field>
                 <mat-label>Name</mat-label>
                 <input type="text" matInput formControlName="name">
-                <mat-error *ngIf="form.controls.name.hasError('required')">
-                    Please enter a valid name
+                <mat-error *ngIf="name !== null && name.touched">
+                    <span *ngIf="name.hasError('required')">Name is required</span>
+                    <span *ngIf="name.hasError('minlength') && !name.hasError('required')">
+                        Name must be at least 6 characters long
+                    </span>
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Email</mat-label>
                 <input type="email" matInput formControlName="email">
-                <mat-error *ngIf="form.controls.email.hasError('email') || form.controls.email.hasError('required')">
-                    Please enter a valid email
+                <mat-error *ngIf="email !== null && email.touched">
+                    <span *ngIf="email.hasError('required')">Email is required</span>
+                    <span *ngIf="email.hasError('email') && !email.hasError('required')">
+                        Please enter a valid email
+                    </span>
                 </mat-error>
             </mat-form-field>
 
@@ -21,35 +27,62 @@
                 <mat-label>Password</mat-label>
                 <input type="{{ showPassword ? 'text' : 'password' }}" matInput formControlName="password">
                 <button
-                    matSuffix
                     mat-icon-button
-                    matTooltip="{{ showPassword ? 'Hide Password' : 'Show Password' }}" 
+                    type="button"
+                    matSuffix
                     (click)="toggleShowPassword()"
                 >
-                    <mat-icon class="registration-form-icon">{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    <mat-icon class="registration-form-icon">
+                        {{ showPassword ? 'visibility_off' : 'visibility' }}
+                    </mat-icon>
                 </button>
-                <mat-error *ngIf="form.controls.password.hasError('required')">
-                    Please enter a valid password
+                <mat-error *ngIf="password !== null && password.touched">
+                    <span *ngIf="password.hasError('required')">
+                        Password is required
+                    </span>
+                    <span *ngIf="password.hasError('minlength') && !password.hasError('required')">
+                        Password must be at least 6 characters
+                    </span>
+                    <span *ngIf="password.hasError('passwordValidator') && !password.hasError('minlength') && !password.hasError('required')">
+                        Password must contain letters and digits
+                    </span>
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Repeat Password</mat-label>
-                <input type="{{ showRepeatPassword ? 'text' : 'password' }}" matInput formControlName="repeatPassword">
+                <input 
+                    type="{{ showRepeatPassword ? 'text' : 'password' }}"
+                    matInput
+                    formControlName="repeatPassword"
+                >
                 <button
-                    matSuffix
                     mat-icon-button
-                    matTooltip="{{ showRepeatPassword ? 'Hide Password' : 'Show Password' }}" 
+                    type="button"
+                    matSuffix
                     (click)="toggleShowRepeatPassword()"
                 >
-                    <mat-icon class="registration-form-icon">{{ showRepeatPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    <mat-icon class="registration-form-icon">
+                        {{ showRepeatPassword ? 'visibility_off' : 'visibility' }}
+                    </mat-icon>
                 </button>
-                <mat-error *ngIf="form.controls.repeatPassword.hasError('required')">
-                    Please enter a valid password
+
+                <mat-error *ngIf="repeatPassword !== null && repeatPassword.touched">
+                    <span *ngIf="repeatPassword.hasError('required')">
+                        Repeat password is required
+                    </span>
+                    <span *ngIf="repeatPassword.hasError('minlength') && !repeatPassword.hasError('required')">
+                        Repeat password must be at least 6 characters
+                    </span>
+                    <span *ngIf="repeatPassword.hasError('passwordValidator') && !repeatPassword.hasError('minlength') && !repeatPassword.hasError('required')">
+                        Repeat password must contain letters and digits
+                    </span>
                 </mat-error>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Registration</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+                Registration
+            </button>
         </form>
     </mat-card-content>
 
