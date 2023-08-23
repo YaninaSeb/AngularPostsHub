@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { AsideInfoComponent } from './components/aside-info/aside-info.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -15,7 +16,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AsideInfoComponent } from './components/aside-info/aside-info.component';
 
 const routes: Routes = [
     {

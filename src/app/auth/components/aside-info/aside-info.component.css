@@ -1,0 +1,13 @@
+.wrap-aside-info {
+    width: 300px;
+    color: rgb(255, 255, 255);
+}
+
+.aside-info-title {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.aside-info-body {
+    margin-top: 30px;
+}
