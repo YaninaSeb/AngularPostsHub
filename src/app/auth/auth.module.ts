@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AsideInfoComponent } from './components/aside-info/aside-info.component';
 
 const routes: Routes = [
     {
@@ -37,7 +38,8 @@ const routes: Routes = [
         LoginComponent,
         RegistrationComponent,
         LoginFormComponent,
-        RegistrationFormComponent
+        RegistrationFormComponent,
+        AsideInfoComponent
     ],
     imports: [
         RouterModule.forChild(routes),

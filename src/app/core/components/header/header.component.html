@@ -1,15 +1,13 @@
 <mat-toolbar color="primary" class="wrap-header">
-    <div class="header-logo">
-        <img src="" alt="Logo">
-    </div>
+    <div class="header-logo">Blog.</div>
 
     <button mat-button *ngIf="isLoggedIn; else loginButton" class="header-icon" (click)="logout()">
-        <mat-icon>logout</mat-icon>
+        <mat-icon class="icon">logout</mat-icon>
     </button>
 
     <ng-template #loginButton>
       <button mat-button class="header-icon" routerLink="/auth">
-        <mat-icon>login</mat-icon>
+        <mat-icon class="icon">login</mat-icon>
       </button>
     </ng-template>
 

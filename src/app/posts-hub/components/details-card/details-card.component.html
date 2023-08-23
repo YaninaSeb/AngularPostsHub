@@ -1,19 +1,20 @@
-<div class="back-button">
-    <a mat-button class="back-button-link" routerLink="/posts">
-        <mat-icon>chevron_left</mat-icon>
-        Back to posts
+<div class="back-button-link">
+    <a mat-button routerLink="/posts">
+        <mat-icon class="back-button-icon">chevron_left</mat-icon>
+        Back to all posts
     </a>
 </div>
 
-<mat-card *ngIf="post; else loading" class="wrap-post">
-    <mat-card-header class="post-header">
-        {{ post.title }}
-    </mat-card-header>
-    <mat-card-content class="post-body">
-        {{ post.body }}
-    </mat-card-content>
-</mat-card>
+<div *ngIf="post; else loading" class="wrap-post">
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-img">
+        <img mat-card-image src="../../../../assets/img/img-example.png" alt="Photo">
+    </div>
+    <div class="post-body">{{ post.body }} {{ post.body }} {{ post.body }}</div>
+</div>
 
 <ng-template #loading>
-    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+    <div class="wrap-spinner">
+        <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+    </div>
 </ng-template>
