@@ -34,4 +34,4 @@ const routes: Routes = [
         MatIconModule,
     ],
 })
-export class PostsHubModule { }
+export class BlogModule { }

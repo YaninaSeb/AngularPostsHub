@@ -16,8 +16,8 @@ const routes: Routes = [
             { 
                 path: 'posts', 
                 loadChildren: () => 
-                    import('./posts-hub/posts-hub.module').then(
-                        (module: typeof import('./posts-hub/posts-hub.module')) => module.PostsHubModule
+                    import('./blog/blog.module').then(
+                        (module: typeof import('./blog/blog.module')) => module.BlogModule
                     ),
             }
         ]
