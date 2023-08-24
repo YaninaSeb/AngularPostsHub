@@ -35,12 +35,10 @@ export class AuthService {
     }
 
     public login(data: LoginDataModel): void {
-        if (this.isUserRegistered(data)) {
-            localStorage.setItem('userToken', Date.now().toString());
-            this.authState.next(true);
-    
-            this.router.navigate(['/posts']);
-        }
+        localStorage.setItem('userToken', Date.now().toString());
+        this.authState.next(true);
+
+        this.router.navigate(['/posts']);
     }
 
     public logout(): void {

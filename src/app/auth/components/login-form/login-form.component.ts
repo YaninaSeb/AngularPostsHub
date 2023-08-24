@@ -12,6 +12,7 @@ import { passwordValidator } from '../../utils/password.validator';
 })
 export class LoginFormComponent implements OnInit{
     public form!: FormGroup<LoginFormModel>;
+    public isUserRegistered: boolean = true; 
     public showPassword: boolean = false;
 
     constructor(private readonly fb: FormBuilder, private readonly authService: AuthService) {}
@@ -49,7 +50,11 @@ export class LoginFormComponent implements OnInit{
                 password: this.form.controls.password.value!
             };
 
-            this.authService.login(data);
+            this.isUserRegistered = this.authService.isUserRegistered(data);
+
+            if (this.isUserRegistered) {
+                this.authService.login(data);
+            }
         }
     }
 }

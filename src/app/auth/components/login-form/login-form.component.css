@@ -11,6 +11,32 @@
     background-color: rgb(255, 255, 255);
 }
 
+.login-error {
+    margin: 0 16px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    background: rgb(255, 56, 56);
+}
+
+.error-icon {
+    display: flex;
+    align-items: center;
+    
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.error-title {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
+
 .login-header {
     justify-content: center;
 

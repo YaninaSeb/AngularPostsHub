@@ -1,7 +1,14 @@
 <mat-card class="wrap-login">
     <mat-card-header class="login-header">Login</mat-card-header>
+
+    <div *ngIf="!isUserRegistered" class="login-error">
+        <mat-icon class="error-icon">warning</mat-icon>
+        <div class="error-title">No account found with this information.</div>
+    </div>
+
     <mat-card-content>
         <form [formGroup]="form" class="login-form" (ngSubmit)="onSubmitForm()">
+
             <mat-form-field>
                 <mat-label>Email</mat-label>
                 <input type="email" matInput formControlName="email">
@@ -29,10 +36,10 @@
                         Password is required
                     </span>
                     <span *ngIf="password.hasError('minlength') && !password.hasError('required')">
-                        Password must be at least 6 characters
+                        Must be at least 6 characters long
                     </span>
                     <span *ngIf="password.hasError('passwordValidator') && !password.hasError('minlength') && !password.hasError('required')">
-                        Password must contain letters and digits
+                        Must contain letters and digits
                     </span>
                 </mat-error>
             </mat-form-field>

@@ -42,10 +42,10 @@
                         Password is required
                     </span>
                     <span *ngIf="password.hasError('minlength') && !password.hasError('required')">
-                        Password must be at least 6 characters
+                        Must be at least 6 characters long
                     </span>
                     <span *ngIf="password.hasError('passwordValidator') && !password.hasError('minlength') && !password.hasError('required')">
-                        Password must contain letters and digits
+                        Must contain letters and digits
                     </span>
                 </mat-error>
             </mat-form-field>
@@ -73,10 +73,10 @@
                         Repeat password is required
                     </span>
                     <span *ngIf="repeatPassword.hasError('minlength') && !repeatPassword.hasError('required')">
-                        Repeat password must be at least 6 characters
+                        Must be at least 6 characters long
                     </span>
                     <span *ngIf="repeatPassword.hasError('passwordValidator') && !repeatPassword.hasError('minlength') && !repeatPassword.hasError('required')">
-                        Repeat password must contain letters and digits
+                        Must contain letters and digits
                     </span>
                 </mat-error>
             </mat-form-field>
