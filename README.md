@@ -1,27 +1,39 @@
-# App
+# Blog-app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Описание проекта
+Это проект по созданию Angular приложения для управления постами пользователей с включенной системой авторизации 
 
-## Development server
+## Функциональность
+- Страница авторизации с валидацией форм
+- Страница с таблицей постов, с которой можно перейти на страницу поста по id   
+- Страница поста по id, с которой можно вернуться на страницу всех постов
+- Фильтрация постов в зависимости от выбранного автора
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Стек технологий
+- TypeScript 
+- HTML5 & CSS3
+- Angular
+- Angular Material
 
-## Code scaffolding
+## Установка проекта
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Клонировать репозиторий:
 
-## Build
+    https://github.com/YaninaSeb/Blog-app.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Скриншоты
+<details><summary><b>Развернуть</b></summary>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[![blog-app](https://github.com/YaninaSeb/Blog-app/assets/85887443/57d6d1d1-2bbe-4480-9376-d7da08f5d74a)]()
 
-## Running end-to-end tests
+[![blog-app](https://github.com/YaninaSeb/Blog-app/assets/85887443/f9fd4983-b17f-426c-9045-be0aba0c013a)]()
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+[![blog-app](https://github.com/YaninaSeb/Blog-app/assets/85887443/7e3da4d7-6f31-44e0-94de-21644ed232ca)]()
 
-## Further help
+[![blog-app](https://github.com/YaninaSeb/Blog-app/assets/85887443/8a90ce7a-6a44-4357-9d31-01bb0c6a8f86)]()
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+</details>
+
+## Ссылка на сайт
+https://yaninaseb.github.io/Blog-app/
