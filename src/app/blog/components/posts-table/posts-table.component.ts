@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { PostModel } from '../../models/post.model';
-import { HttpService } from '../../services/http.service';
+import { PostsService } from '../../services/posts.service';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-posts-table',
     templateUrl: './posts-table.component.html',
     styleUrls: ['./posts-table.component.css']
 })
-export class PostsTableComponent implements OnInit{
-    public allPosts!: PostModel[];
+export class PostsTableComponent implements OnInit {
+    public allPosts$!: Observable<PostModel[]>;
 
-    constructor(private httpService: HttpService) {}
+    constructor(private readonly postsService: PostsService) {}
 
     public ngOnInit(): void {
-        this.httpService.getPosts().subscribe((data: PostModel[]) => {
-            this.allPosts = data;
-        });
+        this.allPosts$ = this.postsService.posts$;
+
+        this.postsService.setPosts();
     }
 }

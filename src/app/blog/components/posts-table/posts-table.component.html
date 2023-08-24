@@ -1,9 +1,13 @@
 <div class="wrap-posts">
     <div class="posts-title">All posts</div>
 
-    <div *ngIf="allPosts; else loading" class="posts-table"> 
+    <div class="posts-filter">
+        <app-posts-filter></app-posts-filter>
+    </div>
+
+    <div *ngIf="allPosts$ | async; else loading" class="posts-table"> 
         <app-posts-item 
-            *ngFor="let post of allPosts"
+            *ngFor="let post of (allPosts$ | async)"
             [post]="post"
         ></app-posts-item>
     </div>

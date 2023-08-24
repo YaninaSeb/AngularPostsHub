@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
 import { PostModel } from '../../models/post.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpService } from '../../services/http.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-details-card',
@@ -12,14 +13,16 @@ export class DetailsCardComponent implements OnInit {
     public post!: PostModel;
 
     constructor(
+        private readonly destroyRef: DestroyRef,
         private readonly activateRoute: ActivatedRoute,
-        private httpService: HttpService
+        private readonly httpService: HttpService
     ) {}
 
-    ngOnInit(): void {
-        this.activateRoute.params.subscribe((params: Params) => {
+    public ngOnInit(): void {
+        this.activateRoute.params.pipe(
+            takeUntilDestroyed(this.destroyRef)
+        ).subscribe((params: Params) => {
             const postId: number = params['id'];
-
             this.httpService.getPostById(postId).subscribe((data: PostModel) => {
                 this.post = data;
             });
