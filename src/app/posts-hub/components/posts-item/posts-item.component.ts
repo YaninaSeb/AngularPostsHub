@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./posts-item.component.css']
 })
 export class PostsItemComponent {
-    @Input() post!: PostModel;
+    @Input() public post!: PostModel;
 
     constructor(private readonly router: Router) {}
 

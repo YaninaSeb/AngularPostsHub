@@ -6,7 +6,7 @@
 
 .wrap-post:hover {
     cursor: pointer;
-    filter: drop-shadow(2px 2px 8px rgba(63, 81, 181, 0.5));  
+    filter: drop-shadow(2px 2px 4px rgba(63, 81, 181, 0.5)); 
 }
 
 .post-img {

@@ -24,7 +24,6 @@ const routes: Routes = [
         PostsTableComponent,
         PostsItemComponent,
         DetailsCardComponent,
-        
     ],
     imports: [
         RouterModule.forChild(routes),
