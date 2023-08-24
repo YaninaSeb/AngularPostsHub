@@ -1,0 +1,55 @@
+<mat-card class="wrap-login">
+    <mat-card-header class="login-header">Login</mat-card-header>
+
+    <div *ngIf="!isUserRegistered" class="login-error">
+        <mat-icon class="error-icon">warning</mat-icon>
+        <div class="error-title">No account found with this information.</div>
+    </div>
+
+    <mat-card-content>
+        <form [formGroup]="form" class="login-form" (ngSubmit)="onSubmitForm()">
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email">
+                <mat-error *ngIf="email !== null && email.touched">
+                    <span *ngIf="email.hasError('required')">Email is required</span>
+                    <span *ngIf="email.hasError('email') && !email.hasError('required')">
+                        Please enter a valid email
+                    </span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="{{ showPassword ? 'text' : 'password' }}" matInput formControlName="password">
+                <button
+                    mat-icon-button
+                    type="button"
+                    matSuffix
+                    (click)="toggleShowPassword()"
+                >
+                    <mat-icon class="login-form-icon">{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+                <mat-error *ngIf="password !== null && password.touched">
+                    <span *ngIf="password.hasError('required')">
+                        Password is required
+                    </span>
+                    <span *ngIf="password.hasError('minlength') && !password.hasError('required')">
+                        Must be at least 6 characters long
+                    </span>
+                    <span *ngIf="password.hasError('passwordValidator') && !password.hasError('minlength') && !password.hasError('required')">
+                        Must contain letters and digits
+                    </span>
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+        </form>
+    </mat-card-content>
+
+    <mat-card-actions class="login-action">
+        <span>Don't have an account? </span>
+        <a class="login-action-link" routerLink="/auth/registration">Registration</a>
+    </mat-card-actions>
+</mat-card>

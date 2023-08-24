@@ -1,0 +1,47 @@
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap-posts {
+    width: 100%;
+    height: 100%;
+    padding: 20px 80px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.posts-table {
+    padding: 5px 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    overflow-y: scroll;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .wrap-posts {
+        padding: 20px 20px;
+    }
+}

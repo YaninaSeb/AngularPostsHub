@@ -1,0 +1,36 @@
+.wrap-header {
+    height: 65px;
+    padding: 0 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    text-transform: uppercase;
+    font-size: 34px;
+    color: rgb(255, 255, 255);
+}
+
+.header-icon {
+    border: none;
+    background: none;
+    color: rgb(255, 255, 255);
+}
+
+.header-icon:hover {
+    cursor: pointer;
+}
+
+.icon {
+    width: 34px;
+    height: 34px;
+    font-size: 34px;
+}
+
+@media (max-width: 768px) {
+    .wrap-header {
+        padding: 0 20px;
+    }
+}

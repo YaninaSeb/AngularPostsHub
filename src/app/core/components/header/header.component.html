@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="wrap-header">
+    <div class="header-logo">Blog.</div>
+
+    <button mat-button *ngIf="isLoggedIn; else loginButton" class="header-icon" (click)="logout()">
+        <mat-icon class="icon">logout</mat-icon>
+    </button>
+
+    <ng-template #loginButton>
+      <button mat-button class="header-icon" routerLink="/auth">
+        <mat-icon class="icon">login</mat-icon>
+      </button>
+    </ng-template>
+
+</mat-toolbar>
